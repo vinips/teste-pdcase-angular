@@ -1,4 +1,15 @@
 .example-card {
-  margin-left: 100px;
-  margin-right: 100px;
+  // margin: auto;
+  // max-width: 1600px;
+  // margin-left: 100px;
+  // margin-right: 100px;
+}
+
+
+.text-truncate {
+  display: inline-block;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

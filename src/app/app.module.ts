@@ -24,7 +24,7 @@ import { UserService } from '@app/user/user.service';
   ],
   providers: [
     UserService,
-    { provide: LOCALE_ID, useValue: "pt-BR" },
+    { provide: LOCALE_ID, useValue: "pt" },
   ],
   bootstrap: [AppComponent]
 })
