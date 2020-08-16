@@ -1,0 +1,122 @@
+/* FIX Colors */
+//$background-primary-color: #009688;
+$background-primary-color:#673ab7; //muda a cor dos paineis de confirmações
+$border-primary-color: rgba(0, 0, 0, 0.125);
+$background-highlight-color: #D4F1EE;
+$font-color: rgba(0, 0, 0, 0.875);
+
+@mixin border-default {
+  border-color: $border-primary-color;
+  border-top-color: $border-primary-color;
+  border-right-color: $border-primary-color;
+  border-bottom-color: $border-primary-color;
+  border-left-color: $border-primary-color;
+}
+
+.modal-overflow
+{     
+    overflow: auto;    
+}
+
+.modal-footer-custom
+{  
+    font-style: italic;  
+    padding: 10px, 0px, 0px 0px;
+    margin: 0px;
+    font-size: 80%;
+}
+
+.modal-header-custom
+{
+    background-color: #673ab7;
+    font-family: 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
+    color: white;  
+ }
+
+#modal-small-custom
+{
+    left: 15%;
+    top:15%;
+    position: fixed;
+    padding: 0px;
+    z-index: 11;
+    min-width:70vw;
+    min-height: 59vh;  
+}
+
+#modal-big-custom
+{
+    left: 30px;
+    top: 10px;
+    position: fixed;
+    padding: 0px;
+    z-index: 1;
+    min-width: 95vw;
+    min-width: 95vh;   
+    resize: both;  
+    overflow: auto;   
+}
+
+.background-disabled
+{
+    left:0;
+    top:0;
+    position: fixed;
+    padding: 0px;
+    margin: 0px;
+    z-index: 10;
+    width:100%;
+    height: 100%;      
+    background-color:rgba(0, 0, 0, 0.6);    
+}
+
+/* FIX primefaces layout */
+.card {
+  @extend .tab;
+  @extend .spacing-2;
+}
+
+.ui-widget-header {
+  @include border-default;
+  background-color: $background-primary-color;
+  color: #ffffff;
+  @extend .unselectable;
+}
+
+.mat-input-element {
+  color: $font-color;
+}
+
+.ui-widget-content {
+  @include border-default;
+}
+
+.ui-state-default {
+  @include border-default;
+  background-color: $background-highlight-color;
+  color: $font-color;
+}
+
+/* FIX Picklist Component */
+.ui-picklist.ui-picklist-responsive .ui-picklist-buttons {
+  width: 32px;
+}
+
+.ui-picklist.ui-picklist-responsive .ui-picklist-listwrapper {
+  width: calc(50% - 20px);
+
+  &.ui-helper-clearfix.ng-star-inserted {
+    position: absolute;
+    word-wrap: break-word;
+  }
+}
+
+.ui-picklist .ui-picklist-filter-container .ui-picklist-filter {
+  padding-left: 7px;
+}
+
+/* Removido botoes repetidos do layout do picklist*/
+.ui-picklist-source-controls.ui-picklist-buttons.ng-star-inserted:first-child,
+.ui-picklist-target-controls.ui-picklist-buttons.ng-star-inserted:last-child {
+  display: none;
+}
