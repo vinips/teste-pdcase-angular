@@ -25,7 +25,7 @@
           </mat-form-field>
 
           <div class="col-custom-2">
-            <button type="button" mat-stroked-button (click)="reset()" color="primary" class="btn">
+            <button type="button" mat-stroked-button (click)="reset()" color="primary" class="ml-2">
               <mat-icon>clear</mat-icon> Reset
             </button>
           </div>
@@ -89,7 +89,7 @@
               </ng-container>
 
               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
 
             <mat-paginator #paginatorUser

@@ -14,19 +14,11 @@
 @import "node_modules/bootstrap/scss/code";
 @import "node_modules/bootstrap/scss/grid";
 
-// 2. Include custom theme
-@import "src/theme.scss";
-
-// 3. Include NGX-Toasta Definition
-//@import "./node_modules/ngx-toasta/styles/style-default.css";
 
 // 3. Include Project custom
 @import "~src/sass/style.custom.color.scss"; //     Declaration of designs and colors project specific custom
-@import "~src/sass/styles.functions.scss"; //    File for basic functions
 @import "~src/sass/styles.base.scss"; //         Basic components definition
 @import "~src/sass/styles.fix.material.scss"; // Fix for Material Compatibility
-@import "~src/sass/styles.fix.primefaces.scss";//Fix for Primefaces Compatibility
-@import "~src/sass/styles.icon.material.scss"; //custom design and colors management
 @import "~src/sass/style.custom.scss"; //           custom custom styles
 
 /* Importing Bootstrap SCSS file. */

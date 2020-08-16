@@ -49,21 +49,18 @@ export class UserSearchComponent implements OnInit {
     });
   }
 
-  reset()  {
+  public reset()  {
     this.userSearch = this.getFilterEmptyUserSearch();
     this.paginator.pageIndex = 0;
     this.search()
   }
 
-
-  //reseta o index da paginação e realiza uma pesquisa com filtros
   public filter() {
     this.userSearch.pageIndex = 0;
     this.paginator.pageIndex = 0;
     this.search()
   }
 
-  //ordena a tabela de processos
   public sortTable(sort:MatSort) {
     this.sort = sort;
     this.userSearch.direction = sort? sort.direction : this.userSearch.direction;
@@ -83,12 +80,7 @@ export class UserSearchComponent implements OnInit {
      }
   }
 
-  //executa a função quando clicado em uma linha da tabela// carrega o processo na memória e direciona para tela de cadastro
-  onRowClicked(user: User){
-
-  }
-
-  paginatorTable() {
+  public paginatorTable() {
     this.userSearch.pageIndex =  this.paginator.pageIndex;
     this.userSearch.pageSize =   this.paginator.pageSize;
     this.search();

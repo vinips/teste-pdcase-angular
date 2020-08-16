@@ -17,8 +17,4 @@ export class UserService {
     return this.http.post<ListaJSON<User>>(`${PDCASE_URL}/${REST.USER}/allUsers`, userSearch);
   }
 
-  // getUsers(userSearch: any): Observable<ListaJSON<User>> {
-  //   return this.http.post<ListaJSON<User>>(`${PDCASE_URL}/${REST.USER}/teste`,{});
-  // }
-
 }
