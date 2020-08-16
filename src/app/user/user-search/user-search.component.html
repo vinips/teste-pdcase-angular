@@ -1,0 +1,109 @@
+<section class="container">
+  <mat-card >
+    <mat-card-content>
+
+      <mat-card class="menutitle mb-2">
+        <span class="title">User Search</span>
+      </mat-card>
+
+      <mat-card class="mb-2">
+        <div class="row">
+
+          <mat-form-field class="col-custom-2">
+            <input matInput (keyup)="filter()" [(ngModel)]="userSearch.username"
+              placeholder="Search by Username">
+          </mat-form-field>
+
+          <mat-form-field class="col-custom-2">
+            <input matInput (keyup)="filter()" [(ngModel)]="userSearch.name"
+              placeholder="Search by Name">
+          </mat-form-field>
+
+          <mat-form-field class="col-custom-2">
+            <input matInput (keyup)="filter()" [(ngModel)]="userSearch.email"
+              placeholder="Search by E-mail">
+          </mat-form-field>
+
+          <div class="col-custom-2">
+            <button type="button" mat-stroked-button (click)="reset()" color="primary" class="ml-2">
+              <mat-icon>clear</mat-icon> Reset
+            </button>
+          </div>
+
+        </div>
+      </mat-card>
+
+      <mat-card class="menutitle mb-2">
+        <span class="title">Users List</span>
+      </mat-card>
+
+      <mat-card class="mb-2">
+        <div class="row">
+          <div class="full">
+            <table class="table-custom" mat-table [dataSource]="dataSource" matSort matSortActive="name" matSortDisableClear
+              matSortDirection="asc" (matSortChange)="sortTable($event)">
+
+              <ng-container matColumnDef="id">
+                <th nowrap mat-header-cell *matHeaderCellDef mat-sort-header disableClear> ID </th>
+                <td nowrap mat-cell *matCellDef="let user"> {{ user.id }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="username">
+                <th class="d-none d-lg-table-cell" mat-header-cell *matHeaderCellDef mat-sort-header disableClear> Username </th>
+                <td class="d-none d-lg-table-cell" mat-cell *matCellDef="let user"> {{ user.username }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="password">
+                <th  class="d-none d-lg-table-cell" nowrap mat-header-cell *matHeaderCellDef mat-sort-header disableClear> Password </th>
+                <td  class="d-none d-lg-table-cell" nowrap mat-cell *matCellDef="let user"> {{ user.password }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="is_enabled">
+                <th  class="d-none d-lg-table-cell" nowrap mat-header-cell *matHeaderCellDef mat-sort-header disableClear> Status </th>
+                <td  class="d-none d-lg-table-cell" nowrap mat-cell *matCellDef="let user"> {{ user.status == true ? 'Enabled' : 'Disabled' }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="registerDate">
+                <th  class="d-none d-lg-table-cell" nowrap mat-header-cell *matHeaderCellDef mat-sort-header disableClear> Register Date </th>
+                <td  class="d-none d-lg-table-cell" nowrap mat-cell *matCellDef="let user"> {{ user.register_date }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="name">
+                <th  class="d-none d-lg-table-cell" nowrap mat-header-cell *matHeaderCellDef mat-sort-header disableClear> Name</th>
+                <td  class="d-none d-lg-table-cell text-truncate" nowrap mat-cell *matCellDef="let user"> {{ user.name }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="surname">
+                <th  class="d-none d-lg-table-cell" nowrap mat-header-cell *matHeaderCellDef mat-sort-header disableClear> Surname </th>
+                <td  class="d-none d-lg-table-cell text-truncate" nowrap mat-cell *matCellDef="let user"> {{ user.surname }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="email">
+                <th  class="d-none d-lg-table-cell" nowrap mat-header-cell *matHeaderCellDef mat-sort-header disableClear> E-mail </th>
+                <td  class="d-none d-lg-table-cell text-truncate" nowrap mat-cell *matCellDef="let user"> {{ user.email }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="phone">
+                <th  class="d-none d-lg-table-cell" nowrap mat-header-cell *matHeaderCellDef mat-sort-header disableClear> Phone </th>
+                <td  class="d-none d-lg-table-cell" nowrap mat-cell *matCellDef="let user"> {{ user.phone }} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <mat-paginator #paginatorUser
+              [pageSizeOptions]="[5, 10, 20, 50, 100]"
+              [(length)]='lengthPaginator'
+              (page)="paginatorTable()"
+              showFirstLastButtons>
+            </mat-paginator>
+          </div>
+        </div>
+      </mat-card>
+
+      <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+    </mat-card-content>
+  </mat-card>
+
+</section>

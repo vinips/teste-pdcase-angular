@@ -1,0 +1,193 @@
+/* Correções de CSS Bootstrap 4 + Material */
+mat-nav-list a {
+  @extend .undraggable;
+}
+
+.mat-radio-button {
+  margin: 0px 4px;
+}
+
+mat-toolbar {
+  position: fixed;
+  top: 0;
+}
+
+.mat-stroked-button,
+mat-stroked-button {
+  margin-bottom: 3px;
+}
+
+mat-sidenav-container,
+.mat-sidenav-container,
+.sidenav-container[_ngcontent-c1] {
+  @extend .full-width;
+  position: fixed !important;
+  height: calc(100% - 65px) !important;
+
+  @media (max-width: 599px) {
+    height: calc(100% - 57px) !important;
+  }
+}
+
+mat-sidenav {
+  border-right: rgba(0, 0, 0, 0.12) 1px solid;
+  margin-top: 64px;
+
+  &.mat-drawer.mat-drawer-side {
+    z-index: auto;
+  }
+
+  @media (max-width: 599px) {
+    border-right: inherit;
+    margin-top: 56px;
+
+    &.mat-drawer.mat-drawer-side {
+      z-index: auto;
+    }
+  }
+}
+
+mat-table,
+.mat-table {
+  @extend .full-width;
+}
+
+.toast-text {
+  @extend .unselectable;
+}
+
+.form-group {
+  @extend .col-md-10;
+
+  @media (max-width: 599px) {
+    width: 100%;
+  }
+}
+
+.btn mat-raised-button {
+  margin-right: 8px;
+}
+
+// Efeito de click para cedulas
+.mat-row {
+  cursor: pointer;
+}
+
+.mat-row:hover {
+  @include bright;
+  background: #f5f5f5;
+}
+
+.mat-row:hover td:first-of-type {
+  padding-left: 23px;
+}
+
+.mat-row:hover td:last-of-type {
+  padding-right: 23px;
+}
+
+.mat-header-cell {
+  @extend .unselectable;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: var(--green);
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: rgba(0, 0, 0, 0.38);
+}
+
+.mat-slide-toggle-thumb {
+  background-color: var(--red);
+}
+
+.mat-slide-toggle-bar {
+  background-color: rgba(0, 0, 0, 0.38);
+}
+
+.mat-slide-toggle-label:hover .mat-slide-toggle-content,
+.mat-slide-toggle-content:hover {
+  @include bright;
+}
+
+.mat-form-field .mat-form-field-flex :hover:not([disabled]) {
+  @extend .gradient-white-lightgray;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 5px;
+}
+
+mat-form-field,
+.mat-form-field {
+  @extend .full-width;
+}
+
+mat-form-field .mat-form-field-label,
+.mat-form-field .mat-form-field-label {
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+matPrefix {
+  margin: 0px 4px;
+}
+
+img {
+  @extend .undraggable;
+}
+
+.mat-card-actions,
+.mat-card-footer {
+  padding-top: 0px;
+  padding-bottom: 24px !important;
+}
+
+.mat-card-no-padding,
+.mat-card-no-pad {
+  padding-top: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 1em !important;
+
+  & .mat-card-content,
+  & mat-card-content {
+    min-height: 360px;
+  }
+}
+
+label,
+.label,
+mat-radio-group,
+.mat-radio-group,
+mat-radio-label-content,
+.mat-radio-label-content {
+  @extend .font-medium;
+}
+
+.no-icon {
+  &::before {
+    content: "" !important;
+  }
+
+  &.mat-form-field::before {
+    content: "" !important;
+  }
+}
+
+.mat-checkbox-label{
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.mat-tab-label-content{
+  @extend .unselectable;
+}
+
+/**
+ * Correção de barra de rolagem vertial dupla.
+ */
+html {
+  overflow-y: hidden;
+}
+
+body {
+  overflow-y: hidden;
+}

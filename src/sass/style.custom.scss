@@ -1,0 +1,175 @@
+
+/**
+ * Classe para definição de margens e espaçamento de elementos
+ *
+ */
+.container {
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-width: 0.2rem 0 0;
+}
+
+/**
+ * Classe para uso em títulos
+ *
+ */
+.title {
+  @extend .unselectable-text;
+  font-weight: 700;
+  font-size: 1.4em;
+  line-height: 1.1em;
+}
+
+/**
+ * Classe para uso em sub-títulos
+ *
+ */
+.subtitle,
+.sub-title {
+  @extend .unselectable-text;
+  font-weight: 500;
+  font-size: 1.2em;
+
+  @media (max-width: 599px) {
+    font-weight: 500;
+    font-size: 1.06em;
+  }
+}
+
+.left {
+  @extend .unselectable-text;
+  @include bright;
+  font-size: 1.2em;
+  margin-left: 10px;
+  margin-right: 24px;
+  padding-bottom: 10px;
+}
+
+/**
+ * Correção de margem para sombreamento de botões.
+ */
+button:not(.btn-fill) {
+  margin-bottom: 5px !important;
+}
+
+/**
+ * Classe para uso em títulos dos menus
+ *
+ */
+.menutitle,
+.menu-title {
+  @extend .gradient-white-lightgreen;
+
+  margin-bottom: 4px;
+  padding-bottom: 14px !important;
+
+  @media (max-width: 599px) {
+    height: 74px;
+  }
+
+  & .title {
+    @extend .unselectable-text;
+    @include bright;
+    font-size: 1.2em;
+    margin-left: 10px;
+    margin-right: 24px;
+    padding-bottom: 10px;
+  }
+  & .subtitle {
+    @extend .unselectable-text;
+    @include bright;
+    font-size: 1.0em;
+    margin-left: 10px;
+    margin-right: 24px;
+    padding-bottom: 10px;
+    color: #696969
+  }
+
+
+}
+
+.th-actions-50 {
+  width: 16.66%;
+  min-width: 50px;
+  max-width: 250px;
+
+  @media (max-width: 599px) {
+    width: 40px;
+  }
+}
+
+.th-actions-150 {
+  width: 20%;
+  min-width: 150px;
+  max-width: 350px;
+
+  @media (max-width: 599px) {
+    width: 150px;
+  }
+}
+
+/* Importação de CSS dos componentes de exemplo do material */
+// TODO: remover os códigos de exemplo
+.example-full-width {
+  @extend .full-width;
+}
+
+.example-form,
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  @extend .full-width;
+}
+
+.logo-sc {
+  @extend .undraggable;
+  vertical-align: middle;
+  width: 408px;
+  height: 520px;
+  max-width: 408px;
+  max-height: 520px;
+  width: 100%;
+}
+
+.logo-container {
+  text-align: center;
+  vertical-align: middle;
+  margin: 15px 20px;
+}
+
+.button-action {
+  padding: 0px 6px;
+  line-height: 28px;
+}
+
+.row {
+  & .btn-right {
+    margin-right: 15px !important;
+  }
+}
+
+.btn-right,
+.button-right {
+  position: absolute !important;
+  right: 0;
+
+}
+
+.rodape {
+  @extend .text-right;
+  @extend .undraggable;
+}
+
+.hint-erro {
+  @extend .bright;
+  color: --red;
+}
+
+.m-acordeon
+{
+  margin-top: -40px;
+}
+
+
+
+
